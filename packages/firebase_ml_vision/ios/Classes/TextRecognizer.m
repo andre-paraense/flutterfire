@@ -15,7 +15,11 @@
     if ([@"onDevice" isEqualToString:options[@"modelType"]]) {
       _recognizer = [vision onDeviceTextRecognizer];
     } else if ([@"cloud" isEqualToString:options[@"modelType"]]) {
-      _recognizer = [vision cloudTextRecognizer];
+      FIRVisionCloudTextRecognizerOptions *cloudOptions =
+                    [[FIRVisionCloudTextRecognizerOptions alloc] init];
+      cloudOptions.modelType = FIRVisionCloudTextModelTypeDense;
+
+      _recognizer = [vision cloudTextRecognizerWithOptions:cloudOptions];
     } else {
       NSString *reason =
           [NSString stringWithFormat:@"Invalid model type: %@", options[@"modelType"]];
