@@ -119,7 +119,7 @@ abstract class TextContainer {
   ///
   /// The value is null for all text recognizers except for cloud text
   /// recognizers.
-  final double confidence;
+  final num confidence;
 
   /// The four corner points in clockwise direction starting with top-left.
   ///
