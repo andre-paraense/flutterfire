@@ -97,8 +97,7 @@ abstract class TextContainer {
                 data['height'],
               )
             : null,
-//        confidence = data['confidence'],
-        confidence = 1.0,
+        confidence = data['confidence'],
         cornerPoints = List<Offset>.unmodifiable(
             data['points'].map<Offset>((dynamic point) => Offset(
                   point[0],
@@ -120,7 +119,7 @@ abstract class TextContainer {
   ///
   /// The value is null for all text recognizers except for cloud text
   /// recognizers.
-  final double confidence;
+  final num confidence;
 
   /// The four corner points in clockwise direction starting with top-left.
   ///
