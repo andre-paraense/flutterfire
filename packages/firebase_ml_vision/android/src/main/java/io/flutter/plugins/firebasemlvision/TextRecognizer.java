@@ -30,8 +30,11 @@ class TextRecognizer implements Detector {
     if (modelType.equals("onDevice")) {
       recognizer = vision.getOnDeviceTextRecognizer();
     } else if (modelType.equals("cloud")) {
+      List<String> languageList = new ArrayList<>();
+      languageList.add("pt");
       FirebaseVisionCloudTextRecognizerOptions cloudOptions = new FirebaseVisionCloudTextRecognizerOptions.Builder()
               .setModelType(FirebaseVisionCloudTextRecognizerOptions.DENSE_MODEL)
+              .setLanguageHints(languageList)
               .build();
 
       recognizer = vision.getCloudTextRecognizer(cloudOptions);
