@@ -1,3 +1,15 @@
+## 0.13.1+1
+
+* Fixed crashes when using `Query#where` with `DocumentReference` objects
+
+## 0.13.1
+
+* Migrate to `cloud_firestore_platform_interface`.
+
+## 0.13.0+2
+
+* Fixed `persistenceEnabled`, `sslEnabled`, and `timestampsInSnapshotsEnabled` on iOS.
+
 ## 0.13.0+1
 
 * Remove the deprecated `author:` field from pubspec.yaml
