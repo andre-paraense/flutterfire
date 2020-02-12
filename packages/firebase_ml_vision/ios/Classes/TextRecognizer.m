@@ -18,6 +18,7 @@
       FIRVisionCloudTextRecognizerOptions *cloudOptions =
                     [[FIRVisionCloudTextRecognizerOptions alloc] init];
       cloudOptions.modelType = FIRVisionCloudTextModelTypeDense;
+      cloudOptions.languageHints = @[@"pt"];
 
       _recognizer = [vision cloudTextRecognizerWithOptions:cloudOptions];
     } else {
